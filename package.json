@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "ts-node src/index.ts",
-    "build": "npm install"
+    "build": "tsc"
   },
   "keywords": [],
   "author": "",

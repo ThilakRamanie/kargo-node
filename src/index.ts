@@ -22,6 +22,18 @@ const pool = new Pool({
   },
 });
 
+app.get("/", async (req: Request, res: Response) => {
+  try {
+    res.json({
+      title: "Welcome to kargo server",
+      description: "This is a kargo server lander",
+    });
+  } catch (err) {
+    console.error(err);
+    res.status(400).json({ error: "Something went wrong" });
+  }
+});
+
 app.get("/curriculum", async (req: Request, res: Response) => {
   try {
     const result = await pool.query("SELECT * FROM curriculum_kargo");
